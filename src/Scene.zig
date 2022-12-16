@@ -5,6 +5,8 @@ const wlr = @import("wlroots");
 
 const Server = @import("Server.zig");
 
+const log = std.log.scoped(.scene);
+
 const Scene = @This(); // {
 
 backend: *wlr.Backend,
@@ -83,7 +85,7 @@ fn handleNewOutput(
 ) void {
     const self = Scene.fromListener("new_output", listener);
 
-    std.log.debug("new output: {s}", .{output.name});
+    log.debug("new output: {s}", .{output.name});
 
     _ = self;
 }
@@ -97,12 +99,12 @@ fn handleNewXdgSurface(
 
     switch (xdg_surface.role) {
         .toplevel => {
-            std.log.debug("new xdg toplevel surface: {s}", .{
+            log.debug("new xdg toplevel surface: {s}", .{
                 xdg_surface.role_data.toplevel.title orelse "(title unset)",
             });
         },
         .popup => {
-            std.log.debug("new xdg popup surface", .{});
+            log.debug("new xdg popup surface", .{});
         },
         .none => unreachable,
     }
@@ -117,7 +119,7 @@ fn handleNewXwaylandSurface(
 ) void {
     const self = Scene.fromListener("new_xwayland_surface", listener);
 
-    std.log.debug("new xwayland surface: {s}", .{
+    log.debug("new xwayland surface: {s}", .{
         xwayland_surface.title orelse "(title unset)",
     });
 

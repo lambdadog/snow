@@ -5,6 +5,8 @@ const wlr = @import("wlroots");
 
 const Server = @import("Server.zig");
 
+const log = std.log.scoped(.input_manager);
+
 const InputManager = @This(); // {
 
 // TODO: multi-seat
@@ -49,10 +51,10 @@ fn handleNewInput(
 ) void {
     const self = InputManager.fromListener("new_input", listener);
 
-    std.log.debug("new input: {s}", .{device.name});
+    log.debug("new input: {s}", .{device.name});
 
     switch (device.type) {
-        else => std.log.warn("unhandled input device type: {s}", .{
+        else => log.warn("unhandled input device type: {s}", .{
             @tagName(device.type),
         }),
     }
