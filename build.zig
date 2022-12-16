@@ -21,6 +21,8 @@ pub fn build(b: *Builder) void {
     scanner.generate("wl_seat", 7);
     scanner.generate("wl_data_device_manager", 3);
 
+    scanner.generate("xdg_wm_base", 2);
+
     const wayland_pkg = Pkg{
         .name = "wayland",
         .source = .{ .generated = &scanner.result },
