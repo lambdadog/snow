@@ -1,6 +1,6 @@
 [submodule "deps/zig-wayland"]
 	path = deps/zig-wayland
-	url = https://github.com/ifreund/zig-wayland
+	url = https://github.com/lambdadog/zig-wayland
 [submodule "deps/zig-xkbcommon"]
 	path = deps/zig-xkbcommon
 	url = https://github.com/ifreund/zig-xkbcommon
@@ -12,4 +12,4 @@
 	url = https://git.sr.ht/~novakane/zig-fcft/
 [submodule "deps/zig-wlroots"]
 	path = deps/zig-wlroots
-	url = git@github.com:lambdadog/zig-wlroots.git
+	url = https://github.com/lambdadog/zig-wlroots
