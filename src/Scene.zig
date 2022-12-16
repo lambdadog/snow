@@ -9,7 +9,6 @@ const log = std.log.scoped(.scene);
 
 const Scene = @This(); // {
 
-backend: *wlr.Backend,
 renderer: *wlr.Renderer,
 allocator: *wlr.Allocator,
 
