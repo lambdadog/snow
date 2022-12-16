@@ -9,8 +9,8 @@ pub fn main() anyerror!void {
 
     try server.backend.start();
 
-    std.log.info("WAYLAND_DISPLAY is {s}", .{server.getSocket()});
-    std.log.info("DISPLAY is {s}", .{server.xwayland.display_name});
+    std.log.info("WAYLAND_DISPLAY is {s}", .{server.getWaylandDisplay()});
+    std.log.info("DISPLAY is {s}", .{server.getX11Display()});
 
     std.log.info("starting server...", .{});
     server.wl_server.run();
