@@ -2,6 +2,8 @@ const std = @import("std");
 
 const Server = @import("Server.zig");
 
+pub const ally = std.heap.c_allocator;
+
 pub fn main() anyerror!void {
     var server: Server = undefined;
     try server.init();
