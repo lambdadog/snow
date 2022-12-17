@@ -4,7 +4,7 @@ const wl = @import("wayland").server.wl;
 const wlr = @import("wlroots");
 
 const ally = @import("../../main.zig").ally;
-const log = std.log.scoped(.view);
+const log = std.log.scoped(.xdg_top_level);
 
 const View = @import("../View.zig");
 
