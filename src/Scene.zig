@@ -120,6 +120,7 @@ fn handleNewOutput(
     const output = Output.create(
         self.output_layout,
         wlr_output,
+        self.renderer,
     ) catch |err| {
         log.err("Failed to allocate output ctx for {s}: {}", .{
             wlr_output.name,
